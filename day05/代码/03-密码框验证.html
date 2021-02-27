@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 200px;
+            margin: 50px auto;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .6);
+            padding-top: 20px;
+        }
+        .box input {
+            float: left;
+        }
+        .box div {
+            float: left;
+        }
+        .box div img {
+            width: 20px;
+            height: 20px;
+        }
+        .righe {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="password" name= "" id="inp">
+        <div>
+            <img src="" alt="" id="Img">
+            <span id="text" class="">请输入3-6位数字密码</span>
+        </div>
+    </div>
+    <script>
+        var inp=document.getElementById('inp');
+        var img=document.getElementById('Img');
+        var text=document.getElementById('text');
+
+        inp.onblur = function() {
+            // console.log("离焦了")
+            if(this.value.length >=3 && this.value.length <=6 ) {
+                Img.src = "image/s1.jpg";
+                text.innerText = "您输入的正确";
+                text.className = "right";
+            }
+            else{
+                Img.scr = "image/s2.jpg";
+                text.innerText = "您输入的不正确！";
+                text.className = "wrong";
+            }
+        }
+    </script>
+</body>
+</html>
